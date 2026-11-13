@@ -1,0 +1,26 @@
+
+.character {
+  display: block;
+  width: clamp(65px, 18vw, 105px);
+  height: auto;
+  object-fit: contain;
+  image-rendering: pixelated;
+  transform-origin: bottom center;
+  animation: breathe 2.5s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .character {
+    animation: none;
+  }
+}

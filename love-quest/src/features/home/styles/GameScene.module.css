@@ -1,0 +1,114 @@
+
+.scene {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  min-height: 170px;
+  overflow: hidden;
+  isolation: isolate;
+  border: 3px solid #49365f;
+  border-radius: 10px;
+  background: #c5a7eb;
+}
+
+.sky {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    #a68cdb 0%,
+    #e7b8dd 75%,
+    #f8d5df 100%
+  );
+}
+
+.cloudLeft,
+.cloudRight {
+  position: absolute;
+  top: 20%;
+  width: 55px;
+  height: 17px;
+  border-radius: 20px;
+  background: #fff0f9;
+  box-shadow: 14px -9px 0 2px #fff0f9;
+}
+
+.cloudLeft {
+  left: 10%;
+}
+
+.cloudRight {
+  right: 15%;
+  top: 32%;
+}
+
+.decorations {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.treeLeft,
+.treeRight {
+  position: absolute;
+  bottom: 17%;
+  font-size: clamp(30px, 7vw, 55px);
+}
+
+.treeLeft {
+  left: 3%;
+}
+
+.treeRight {
+  right: 3%;
+}
+
+
+.characters {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  bottom: 12%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 4px;
+  width: 100%;
+}
+
+
+.heart {
+  align-self: center;
+  color: #e75b94;
+  font-size: 24px;
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+.ground {
+  position: absolute;
+  z-index: 3;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 14%;
+  background: #8ea97b;
+  border-top: 6px solid #c1d59d;
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heart {
+    animation: none;
+  }
+}
